@@ -20,3 +20,24 @@ export const removeSelectedProduct = (product) => {
         payload: product,
     }
 }
+
+export const addToCart = (product) => {
+    return {
+        type: ActionTypes.ADD_TO_CART,
+        payload: product,
+    }
+}
+
+export const removeFromCart = (product) => {
+    return {
+        type: ActionTypes.REMOVE_FROM_CART,
+        payload: product,
+    }
+}
+
+export const decrementCount = (product) => {
+    return {
+        type: ActionTypes.DECREMENT_COUNT,
+        payload: product,
+    }
+}
