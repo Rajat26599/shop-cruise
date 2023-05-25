@@ -41,3 +41,10 @@ export const decrementCount = (product) => {
         payload: product,
     }
 }
+
+export const selectCategory = (category) => {
+    return {
+        type: ActionTypes.SELECT_CATEGORY,
+        payload: category,
+    }
+}

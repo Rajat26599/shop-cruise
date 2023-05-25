@@ -1,3 +1,22 @@
 .ui.placeholder .header:not(:first-child):before {
     height: 0 !important;
 }
+.brand-name:hover, .product-card:hover, .category:hover {
+    cursor: pointer;
+}
+.product-image {
+    max-height: 100%;
+    max-width: 100%;
+}
+.product-image-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40vh;
+    width: 20vw;
+}
+.category {
+    padding: 1rem 1rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+}

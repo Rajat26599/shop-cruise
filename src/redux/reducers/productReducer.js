@@ -6,6 +6,9 @@ const initialState = {
 const initialCartState = {
     cartItems: [],
 };
+const initialCategoryState = {
+    selectedCategory: '',
+}
 
 export const productReducer = (state = initialState, {type, payload}) => {
     switch(type) {
@@ -55,6 +58,15 @@ export const cartReducer = (state = initialCartState, {type, payload}) => {
                 }
             })
             return {...state, cartItems: [...state.cartItems, {...payload, value: value-1}]};
+        default:
+            return state;
+    }
+}
+
+export const categoryReducer = ( state = initialCategoryState, { type, payload } ) => {
+    switch(type){
+        case ActionTypes.SELECT_CATEGORY:
+            return {...state, selectedCategory: payload}
         default:
             return state;
     }

@@ -1,7 +1,9 @@
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart, decrementCount, removeFromCart } from "../redux/actions/productActions";
+import { useNavigate } from "react-router-dom";
 
 const Cart = () => {
+    const navigate = useNavigate();
     const cartItems = useSelector(state => state.cartItems.cartItems)
     const dispatch = useDispatch();
 
@@ -29,7 +31,7 @@ const Cart = () => {
                                     <a className="ui teal tag label" style={{fontSize:"1.1rem"}}>${price}</a>
                                 </h2>
                                 {/* <h3 className="ui brown block header">{category}</h3> */}
-                                <div class="ui input" style={{marginBottom:"1rem"}}>
+                                <div className="ui input" style={{marginBottom:"1rem"}}>
                                     <input type="number" min={1} defaultValue={value} onChange={(e) => handleChange(e, product)} />
                                 </div>
                                 <div 
@@ -46,9 +48,28 @@ const Cart = () => {
             </div>
         )
     })
+
+    const emptyCart = () => {
+        return (
+            <div style={{display:'flex', flexDirection:'column', justifyContent:'center', alignItems:'center', alignSelf:'center'}}>
+                <h2>Your Cart is empty.</h2>
+                <div 
+                    className="ui red button" 
+                    tabIndex="0" 
+                    onClick={() => navigate('/')}
+                    style={{marginLeft:0}}>
+                    <div className="visible content">Shop Now</div>
+                </div>            
+            </div>
+        )
+    }
    
     return (
-        <>{renderList}</>
+        <div>
+            {
+                cartItems.length ? renderList : emptyCart()
+            }
+        </div>
     )
 }
 
