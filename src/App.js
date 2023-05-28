@@ -29,7 +29,7 @@ function App() {
     <div className="App">
         <Router>
           <Header />
-          <div style={{paddingTop:"7rem"}}>
+          <div style={{marginTop:"6rem"}}>
             <Routes>
               <Route path = "/" exact element={<ProductListing />} />
               <Route path = "/product/:productId" exact element={<ProductDetail />} />

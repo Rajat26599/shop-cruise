@@ -1,5 +1,5 @@
 import axios from "axios";
-import react, { useEffect } from "react";
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { selectedProduct, removeSelectedProduct, addToCart } from "../redux/actions/productActions";
@@ -30,7 +30,7 @@ const ProductDetail = () => {
     }
 
     return (
-        <div className="ui grid container">
+        <div className="ui grid container" style={{marginTop:'1rem'}}>
             {Object.keys(product).length === 0? (
                 <div>...Loading</div>
             ) : (
@@ -39,7 +39,7 @@ const ProductDetail = () => {
                         <div className="ui vertical divider"></div>
                         <div className="row">
                             <div className="column lp">
-                                <img className="ui fluid image" src={image} style={{maxHeight: "70vh", width: "auto"}}/>
+                                <img className="ui fluid image" src={image} style={{maxHeight: "70vh", width: "auto"}} alt={title} />
                             </div>
                             <div className="column rp">
                                 <h1>{title}</h1>

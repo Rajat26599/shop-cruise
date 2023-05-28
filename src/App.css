@@ -1,7 +1,7 @@
 .ui.placeholder .header:not(:first-child):before {
     height: 0 !important;
 }
-.brand-name:hover, .product-card:hover, .category:hover {
+.brand-name:hover, .product-card:hover, .category:hover, .carousel-dots:hover, .my-cart:hover {
     cursor: pointer;
 }
 .product-image {

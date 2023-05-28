@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { selectCategory } from "../redux/actions/productActions";
+import logo from '../assets/logo.webp';
 
 const Header = () => {
     const navigate = useNavigate();
@@ -29,8 +30,9 @@ const Header = () => {
     return (
         <div className="ui fixed menu" style={{height:'5rem'}}>
             <div className="ui container center" style={{alignItems:'center'}}>
-                <i className="large bars icon"></i>
-                <h1 className="brand-name" style={{margin: "0 2rem"}} onClick={() => {navigate("/"); dispatch(selectCategory(''))}}>Shop Cruise</h1>
+                {/* <i className="large bars icon"></i> */}
+                <img src={logo} style={{height:'100%'}} alt="shop-cruise-logo" />
+                <h1 className="brand-name" style={{marginRight:"2rem", marginTop:0, marginBottom:0}} onClick={() => {navigate("/"); dispatch(selectCategory(''))}}>Shop Cruise</h1>
                 <nav style={{ display:'inline-flex', alignItems:'center'}}>
                     {
                         Array.from(productsSet).map(category => (
@@ -49,7 +51,7 @@ const Header = () => {
                     }
                 </nav>
             </div>
-            <div className="right menu">
+            <div className="right menu my-cart">
                 <div className="ui item" onClick={() => navigate('/cart')}>
                     <i className="large cart arrow down icon"></i>
                     <span style={{width:"2rem"}}>

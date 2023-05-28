@@ -1,13 +1,12 @@
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { useEffect } from "react";
+import theme from "../theme";
 
 const ProductComponent = () => {
     const navigate = useNavigate();
     const products = useSelector((state) => state.allProducts.products);
 
     const selectedCategory = useSelector((state) => state.categoryReducer.selectedCategory);
-    console.log(selectedCategory);
 
     const renderList = products
         .filter(product => selectedCategory=='' || product.category==selectedCategory)
@@ -21,8 +20,8 @@ const ProductComponent = () => {
                     </div>
                     <div className="content">
                         <div className="header">{title}</div>
-                        <div className="meta price">$ {price}</div>
-                        <div className="meta">{category}</div>
+                        <div className="meta price" style={{color:theme.priceColor, fontWeight:'bold', fontSize:'1.2rem'}}>$ {price}</div>
+                        {/* <div className="meta">{category}</div> */}
                     </div>
                 </div>
 
