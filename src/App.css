@@ -35,4 +35,5 @@
 .cart-total-item-row-right {
     width: 30%;
     align-self: flex-end;
+    text-align: right;
 }

@@ -76,7 +76,7 @@ const Cart = () => {
                         {/* renderList function will return the elements to show the cart items in the left */}
                         <div style={{paddingLeft:'5rem', paddingRight:'2rem', width:'70%'}}>{renderCartItemList}</div>
                         {/* below is the code for code for cart total on the right */}
-                        <div style={{borderLeft:'2px solid gray', height:'100vh', width:'30%', paddingLeft:'2rem', background:'rgba(0,181,161,0.2)'}}>
+                        <div style={{borderLeft:'2px solid gray', height:'100vh', width:'30%', padding:'0 2rem', background:'rgba(0,181,161,0.2)'}}>
                             <CartTotal cartItems={cartItems} />
                         </div>
                     </div>

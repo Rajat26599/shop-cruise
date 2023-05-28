@@ -6,12 +6,21 @@ const CartTotal = ({ cartItems }) => {
         { title: 'Shipping Cost', price: 20 },
         { title: 'Packaging Cost', price: 5 },
     ]
+    const discounts = [
+        { title: 'Discount', price: 2 },
+    ]
 
     //function to get total of the cart items
     const getCartTotal = () => {
         var total = 0;
         cartItems.map(item => {
             total+=(item.price*item.value)
+        })
+        fixedCosts.map(cost => {
+            total+=cost.price
+        })
+        discounts.map(discount => {
+            total-=discount.price
         })
         return total.toFixed(2);
     }
@@ -33,6 +42,16 @@ const CartTotal = ({ cartItems }) => {
                     <div key={index} className="cart-total-item-row" style={{color:theme.fixedCostColor}}>
                         <span className="cart-total-item-row-left">{cost.title}</span>
                         <span className="cart-total-item-row-right">${cost.price.toFixed(2)}</span>
+                    </div>
+                ))    
+            }
+
+            {/* Rows for discounts */}
+            {        
+                discounts.map((discount, index) => (
+                    <div key={index} className="cart-total-item-row" style={{color:theme.discountColor}}>
+                        <span className="cart-total-item-row-left">{discount.title}</span>
+                        <span className="cart-total-item-row-right">- ${discount.price.toFixed(2)}</span>
                     </div>
                 ))    
             }
