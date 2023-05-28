@@ -20,3 +20,19 @@
     font-size: 1.1rem;
     font-weight: bold;
 }
+
+.cart-total-item-row {
+    display: flex;
+    flex-direction: row; 
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+.cart-total-item-row-left {
+    width: 70%;
+    margin-right: 2rem;
+}
+.cart-total-item-row-right {
+    width: 30%;
+    align-self: flex-end;
+}
